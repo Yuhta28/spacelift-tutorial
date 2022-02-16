@@ -15,7 +15,7 @@ resource "spacelift_policy" "access-Yuhta" {
 
 # Access policies only take effect when attached to the stack.
 resource "spacelift_policy_attachment" "access" {
-  policy_id = spacelift_policy.access.id
+  policy_id = spacelift_policy.access-Yuhta.id
   stack_id  = spacelift_stack.managed.id
 }
 
@@ -36,7 +36,7 @@ resource "spacelift_policy" "plan-Yuhta" {
 
 # Plan policies only take effect when attached to the stack.
 resource "spacelift_policy_attachment" "plan" {
-  policy_id = spacelift_policy.plan.id
+  policy_id = spacelift_policy.plan-Yuhta.id
   stack_id  = spacelift_stack.managed.id
 }
 
@@ -59,7 +59,7 @@ resource "spacelift_policy" "push-Yuhta" {
 
 # Push policies only take effect when attached to the stack.
 resource "spacelift_policy_attachment" "push" {
-  policy_id = spacelift_policy.push.id
+  policy_id = spacelift_policy.push-Yuhta.id
   stack_id  = spacelift_stack.managed.id
 }
 
@@ -79,7 +79,7 @@ resource "spacelift_policy" "task-Yuhta" {
 
 # Task policies only take effect when attached to the stack.
 resource "spacelift_policy_attachment" "task" {
-  policy_id = spacelift_policy.task.id
+  policy_id = spacelift_policy.task-Yuhta.id
   stack_id  = spacelift_stack.managed.id
 }
 
@@ -100,14 +100,14 @@ resource "spacelift_policy" "trigger-Yuhta" {
 
 # Trigger policies only take effect when attached to the stack.
 resource "spacelift_policy_attachment" "trigger" {
-  policy_id = spacelift_policy.trigger.id
+  policy_id = spacelift_policy.trigger-Yuhta.id
   stack_id  = spacelift_stack.managed.id
 }
 
 # Let's attach the policy to the current stack, so that the child stack is
 # triggered, too.
 resource "spacelift_policy_attachment" "trigger-self" {
-  policy_id = spacelift_policy.trigger.id
+  policy_id = spacelift_policy.trigger-Yuhta.id
   stack_id  = data.spacelift_current_stack.this.id
 }
 
